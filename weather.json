@@ -1,0 +1,63 @@
+{
+   "$schema": "http://json-schema.org/draft-04/schema#",
+
+	"description": "This schema represents a person's blood pressure as a combination of systolic and diastolic blood pressure, either a single blood pressure measurement, or the result of aggregating several measurements made over time (see Numeric descriptor schema for a list of aggregate measures)",
+	"type": "object",
+	"references": [
+	{
+	    "description": "The SNOMED codes represents Blood pressure (observable entity)",
+	    "url": "http://purl.bioontology.org/ontology/SNOMEDCT/75367002"
+	}
+	],
+	"definitions": {
+	    "temperature": {
+		"$ref": "temperature.json"
+	    },
+	    "temperature_maximum": {
+		"$ref": "temperature_maximum.json"
+	    },
+	    "temperature_minimum": {
+		"$ref": "temperature_minimum.json"
+	    },
+	    "humidity": {
+		"$ref": "humidity.json"
+	    },
+	    "sunrisetime": {
+		"$ref": "sunrisetime.json"
+	    },
+	    "sunsettime": {
+		"$ref": "sunsettime.json"
+	    },
+	    "time_frame": {
+		"$ref": "time-frame-1.x.json"
+	    }
+	},
+
+	"properties": {
+	    "temperature": {
+		"$ref": "#/definitions/temperature"
+	    },
+	    "temperature_maximum": {
+		"$ref": "#/definitions/temperature_maximum"
+	    },
+	    "temperature_minimum": {
+		"$ref": "t#/definitions/emperature_minimum"
+	    },
+	    "humidity": {
+		"$ref": "#/definitions/humidity"
+	    },
+	    "sunrisetime": {
+		"$ref": "#/definitions/sunrisetime"
+	    },
+	    "sunsettime": {
+		"$ref": "#/definitions/sunsettime"
+	    },
+	    "effective_time_frame": {
+		"$ref": "#/definitions/time-frame"
+	    }
+	},
+
+	"required": ["temperature", "temperature_maximum", "temperature_minimum", "humidity", "sunrisetime", "sunsettime"]
+}
+
+
